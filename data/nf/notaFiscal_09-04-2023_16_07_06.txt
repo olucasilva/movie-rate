@@ -1,0 +1,18 @@
+Nome: Lucas
+Email: lucas-up19@hotmail.com
+Cidade: Lorena
+Data: 09-04-2023 16:07:06
+------------------------------------
+Filmes alugados: 
+	 - Um Sonho de Liberdade
+ID dos filmes alugados: 
+	 - 278
+Valor pago nos filmes: R$22,22
+------------------------------------
+Series alugadas: 
+	 - The Last of Us
+ID das series alugadas: 
+	 - 100088
+Valor pago nas series: R$22,55
+------------------------------------
+Valor total: R$44,77
