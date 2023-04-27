@@ -3,22 +3,26 @@
         <h1>Avalia Filmes</h1>
     </div>
     <div class="menu">
-        <div>
-            Criar Filme
-        </div>
-    <nav>
-        <div>
-            <ul>
-                <li> <a class="navLink" href="../index.php">Início</a></li>
-                <li> <a class="navLink" href="../pages/movies.php">Filmes</a></li>
-                <li> <a class="navLink" href="../pages/news.php">Notícias</a></li>
-            </ul>
-        </div>
-    </nav>
-    <div class="cart" id="cart" data-count="0">
-        <a href="../pages/cart.php">
+        <nav>
+            <div>
+                <ul>
+                    <li> <a class="navLink" href="../index.php">Início</a></li>
+                    <li>
+                        <div class="dropdown">
+                            <label   class="dropbtn">Filmes</label>
+                            <div class="dropdown-content">
+                                <div class="losangle"></div>
+                                <a class="navLink" href="../pages/movies.php">Filmes avaliados</a>
+                                <a class="navLink" href="../pages/addRate.php">Deixar uma avaliação</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li> <a class="navLink" href="../pages/news.php">Notícias</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="login">
             Login/Cadastro
-        </a>
+        </div>
     </div>
-</div>
 </header>
