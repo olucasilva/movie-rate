@@ -1,3 +1,4 @@
+<script src="../scripts/login.js"></script>
 <header>
     <div>
         <h1>Avalia Filmes</h1>
@@ -9,7 +10,7 @@
                     <li> <a class="navLink" href="../index.php">Início</a></li>
                     <li>
                         <div class="dropdown">
-                            <label   class="dropbtn">Filmes</label>
+                            <label class="dropbtn">Filmes</label>
                             <div class="dropdown-content">
                                 <div class="losangle"></div>
                                 <a class="navLink" href="../pages/movies.php">Filmes avaliados</a>
@@ -21,7 +22,7 @@
                 </ul>
             </div>
         </nav>
-        <div class="login">
+        <div class="login" onclick="openDialog()">
             Login/Cadastro
         </div>
     </div>

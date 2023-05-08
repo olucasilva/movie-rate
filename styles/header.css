@@ -46,7 +46,8 @@ ul>li {
   color: #fff;
 }
 
-.navLink:hover, #dropbrn {
+.navLink:hover,
+#dropbrn {
   transition: 0.5s color ease;
   color: red;
 }
@@ -60,6 +61,12 @@ ul>li {
   align-items: center;
   position: absolute;
   right: 10vw;
+}
+
+.login:hover {
+  transition: 0.5s color ease;
+  color: red;
+  cursor: pointer;
 }
 
 .dropbtn {

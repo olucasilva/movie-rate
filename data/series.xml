@@ -3,7 +3,7 @@
   <series>
     <serie>
       <id>130392</id>
-      <name>The D&#x27;Amelio Show</name>
+      <title>The D&#x27;Amelio Show</title>
       <overview>De uma escuridão relativa e uma aparente vida normal, ao serem jogados nas luzes de
         Hollywood da noite para o dia, os D&#x27;Amelio enfrentam novos desafios e oportunidades que
         não poderiam ter imaginado. Charli, Dixie, Heidi e Marc fazem o melhor que podem para
@@ -15,7 +15,7 @@
     </serie>
     <serie>
       <id>1396</id>
-      <name>Breaking Bad: A Química do Mal</name>
+      <title>Breaking Bad: A Química do Mal</title>
       <overview>Ao saber que tem câncer, um professor passa a fabricar metanfetamina pelo futuro da
         família, mudando o destino de todos.</overview>
       <poster_path>/30erzlzIOtOK3k3T3BAl1GiVMP1.jpg</poster_path>
@@ -24,7 +24,7 @@
     </serie>
     <serie>
       <id>100088</id>
-      <name>The Last of Us</name>
+      <title>The Last of Us</title>
       <overview>Situado duas décadas após a implosão de nossa sociedade, o drama seguirá Joel, um
         sobrevivente difícil, que é contratado para contrabandear uma garota de 14 anos chamada
         Ellie
@@ -38,7 +38,7 @@
     </serie>
     <serie>
       <id>94605</id>
-      <name>Arcane</name>
+      <title>Arcane</title>
       <overview>Em meio ao conflito entre as cidades-gêmeas de Piltover e Zaun, duas irmãs lutam em
         lados opostos de uma guerra entre tecnologias mágicas e convicções incompatíveis.</overview>
       <poster_path>/fqldf2t8ztc9aiwn3k6mlX3tvRT.jpg</poster_path>
@@ -47,7 +47,7 @@
     </serie>
     <serie>
       <id>60625</id>
-      <name>Rick e Morty</name>
+      <title>Rick e Morty</title>
       <overview>Rick é um velho mentalmente desequilibrado, mas cientificamente talentoso que se
         reconectou recentemente com sua família. Ele passa a maior parte do tempo envolvendo o jovem
         neto Morty em aventuras perigosas e estranhas no espaço e em universos alternativos.
@@ -61,7 +61,7 @@
     </serie>
     <serie>
       <id>37854</id>
-      <name>One Piece</name>
+      <title>One Piece</title>
       <overview>Houve um homem que conquistou tudo aquilo que o mundo tinha a oferecer, o lendário
         Rei
         dos Piratas, Gold Roger. Capturado e condenado à execução pelo Governo Mundial, suas últimas
@@ -76,7 +76,7 @@
     <serie>
       <first_air_date>2017-03-19</first_air_date>
       <id>70785</id>
-      <name>Anne com um &quot;E&quot;</name>
+      <title>Anne com um &quot;E&quot;</title>
       <overview>O mundo de Green Gables que Anne tanto adora se expande com novas pessoas e
         emocionantes histórias de amor, perdas e amadurecimento.</overview>
       <poster_path>/xWdSSB1La6FcXZUuuwvcqvB6Kdf.jpg</poster_path>
@@ -85,7 +85,7 @@
     </serie>
     <serie>
       <id>114410</id>
-      <name>Chainsaw Man</name>
+      <title>Chainsaw Man</title>
       <overview>Denji tem um sonho simples - viver uma vida feliz e pacífica, passando um tempo com
         uma garota de quem gosta. Isso está muito longe da realidade, no entanto, já que Denji é
         forçado pela yakuza a matar demônios para pagar suas dívidas esmagadoras. Usando seu demônio
@@ -97,7 +97,7 @@
     </serie>
     <serie>
       <id>67915</id>
-      <name>Goblin</name>
+      <title>Goblin</title>
       <overview>Shin é um Goblin que também é um protetor de almas. Ele vive junto com um ceifador
         amnésico que está encarregado de levar as almas falecidas. Juntos, os dois enviam os mortos
         para a vida após a morte. Shin não quer mais ser imortal e busca uma noiva humana para
@@ -116,7 +116,7 @@
     </serie>
     <serie>
       <id>65930</id>
-      <name>Boku no Hero Academia</name>
+      <title>Boku no Hero Academia</title>
       <overview>Por toda a sua vida, Izuku sonhou ser um herói — um objetivo ambicioso para qualquer
         um, mas especialmente desafiador para um garoto sem superpoderes. Isso mesmo: em um mundo
         onde
@@ -130,7 +130,7 @@
     </serie>
     <serie>
       <id>31911</id>
-      <name>Fullmetal Alchemist: Brotherhood</name>
+      <title>Fullmetal Alchemist: Brotherhood</title>
       <overview>Depois de perderem sua mãe, Alphonse e Edward Elric tentam trazê-la de volta usando
         uma técnica de alquimia proíbida. Contudo, o princípio básico da alquimia é a &#x27;troca
         equivalente&#x27;, e tentar ressucitar alguém custa muito alto. Ed perde sua perna, e Al
@@ -149,7 +149,7 @@
     </serie>
     <serie>
       <id>95557</id>
-      <name>Invencível</name>
+      <title>Invencível</title>
       <overview>Uma animação de super-heróis para adultos e conta a história de Mark Grayson, de 17
         anos, um cara como qualquer outro de sua idade, exceto que seu pai é o super-herói mais
         poderoso do planeta, Omni-Man. Porém, à medida que Mark desenvolve seus próprios poderes,
@@ -161,7 +161,7 @@
     </serie>
     <serie>
       <id>85937</id>
-      <name>Demon Slayer: Kimetsu no Yaiba</name>
+      <title>Demon Slayer: Kimetsu no Yaiba</title>
       <overview>Japão, era Taisho. Tanjiro, um bondoso jovem que ganha a vida vendendo carvão,
         descobre que sua família foi massacrada por um demônio. E pra piorar, Nezuko, sua irmã mais
         nova e única sobrevivente, também foi transformada num demônio. Arrasado com esta sombria
@@ -175,13 +175,13 @@
     </serie>
     <serie>
       <id>83121</id>
-      <name>Kaguya-sama wa Kokurasetai: Tensai-tachi no Renai Zunousen</name>
+      <title>Kaguya-sama wa Kokurasetai: Tensai-tachi no Renai Zunousen</title>
       <overview>Considerado um gênio devido a ter as notas mais altas do país, Miyuki Shirogane
         lidera
         o prestigioso conselho estudantil da Academia Shuchiin como seu presidente, trabalhando ao
         lado do belo e rico vice-presidente Kaguya Shinomiya. Os dois são frequentemente
         considerados
-        como o casal perfeito pelos alunos, apesar de não terem qualquer tipo de relacionamento
+        como o casal perfeito pelos alunos, apesar de não terem qualquer tipo de relaciotitlento
         romântico. No entanto, a verdade é que depois de passar tanto tempo juntos, os dois
         desenvolveram sentimentos um pelo outro; infelizmente, nenhum deles está disposto a
         confessar,
@@ -194,7 +194,7 @@
     </serie>
     <serie>
       <id>31132</id>
-      <name>Apenas Um Show</name>
+      <title>Apenas Um Show</title>
       <overview>Mordecai e Rigby são guardas de um parque. Mas esses melhores amigos são preguiçosos
         e
         não deixam o trabalho interferir com sua capacidade de se divertir. Enquanto Mordecai tenta
@@ -209,7 +209,7 @@
     </serie>
     <serie>
       <id>92685</id>
-      <name>A Casa Coruja</name>
+      <title>A Casa Coruja</title>
       <overview>Luz, uma adolescente humana segura de si, tropeça acidentalmente em um portal para
         um
         reino mágico, onde faz amizade com uma bruxa rebelde.</overview>
@@ -219,7 +219,7 @@
     </serie>
     <serie>
       <id>246</id>
-      <name>Avatar: A Lenda de Aang</name>
+      <title>Avatar: A Lenda de Aang</title>
       <overview>Aang é um menino de 12 anos que descobre ser o Avatar, mestre responsável por
         garantir
         o equilíbrio entre os quatro elementos e suas respectivas nações, mantendo o planeta em paz.</overview>
@@ -229,7 +229,7 @@
     </serie>
     <serie>
       <id>85990</id>
-      <name>Hitoribocchi no Marumaruseikatsu</name>
+      <title>Hitoribocchi no Marumaruseikatsu</title>
       <overview>Hitori Bocchi, uma garota que sofre de ansiedade severa, só fez uma amiga durante
         todo
         o fundamental. Ao descobrir que irão para escolas diferentes no ano seguinte, Bocchi promete
@@ -244,7 +244,7 @@
     </serie>
     <serie>
       <id>80539</id>
-      <name>Asobi Asobase</name>
+      <title>Asobi Asobase</title>
       <overview>Hanako, uma estudante atleticamente proficiente, mas de cabeça grossa, com um senso
         de
         moda esquisito, joga um jogo com a estudante de transferência americana Olivia. No entanto,
@@ -260,7 +260,7 @@
     </serie>
     <serie>
       <id>135157</id>
-      <name>Alquimia das Almas</name>
+      <title>Alquimia das Almas</title>
       <overview>Uma feiticeira poderosa no corpo de uma mulher cega é convocada a mudar o destino de
         um homem de uma renomada família.</overview>
       <poster_path>/1PmLJGwX61w32dlu4bwmxtizWwt.jpg</poster_path>

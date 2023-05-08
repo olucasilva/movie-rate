@@ -1,0 +1,81 @@
+.shadow {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 3;
+    display: none;
+}
+
+.container {
+    width: 30vw;
+    height: 40vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: rgb(150, 150, 150);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.show {
+    display: block;
+}
+
+.close {
+    color: rgb(70, 70, 70);
+    position: absolute;
+    width: 1.1em;
+    height: 1.1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: .5vw;
+    top: .5vw;
+    transition: 1s all ease;
+}
+
+.close:hover {
+    transform: scale(1.2);
+    color: red;
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    height: 70%;
+}
+
+.input {
+    margin-bottom: 1rem;
+}
+
+.input input {
+    width: 100%;
+}
+
+form div {
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+.submit {
+    width: 50%;
+    height: 8vh;
+    border: none;
+    background-color: rgb(195, 195, 195);
+    font-size: 24px;
+}
+
+.submit:hover {
+    background-color: rgb(197, 251, 251);
+    border: none;
+    cursor: pointer;
+    transition: all 1s ease;
+}

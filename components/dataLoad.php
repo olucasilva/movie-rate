@@ -2,12 +2,13 @@
 <section id="container">
   <?php
   $i = 0;
-      $data = file_get_contents('../data/movies.json');
+  
+    $data = file_get_contents('../data/movies.json');
     $items = json_decode($data);
-
+        
   foreach ($items as $item) {
     if ($i == 0) {
-      echo "<div class='movies-rows' id='row$detailId'>";
+      echo "<div class='movies-rows'>";
     }
     include 'elementMovie.php';
     $i++;
@@ -18,7 +19,6 @@
   }
   if ($i != 0) {
     echo "</div>";
-    include 'details.php';
   }
   ?>
   <script>

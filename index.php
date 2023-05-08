@@ -17,14 +17,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
 
-  <script src="../scripts/cart.js"></script>
-
   <title>PopFlix - Filmes</title>
 </head>
 
 <body>
   <?php
   include 'components/header.php';
+  include 'components/loginDialog.php';
   ?>
 </body>
 

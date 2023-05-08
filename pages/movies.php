@@ -19,16 +19,16 @@
 
   <script src="../scripts/script.js"></script>
 
-  <title>PopFlix - Filmes</title>
+  <title>Filmes</title>
 </head>
 
 <body>
   <?php
   include '../components/header.php';
-  $type = 0;
   $i = 0;
-  $detailId = 1;
+  $type = 'movies';
   include '../components/dataLoad.php';
+  include '../components/loginDialog.php';
   ?>
 </body>
 

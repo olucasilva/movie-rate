@@ -4,6 +4,7 @@
   position: absolute;
   bottom: 0;
   left: 15vw;
+  padding-bottom: 16px;
 }
 
 .movies-rows {
@@ -33,7 +34,8 @@
   flex-direction: row;
   justify-content: center;
 }
-.element-movie>label{
+
+.element-movie>label {
   font-size: 14px;
   text-align: center;
 }

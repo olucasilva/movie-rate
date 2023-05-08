@@ -29,6 +29,7 @@ echo $id;
 <body>
   <?php
   include '../components/header.php';
+  include '../components/loginDialog.php';
   ?>
 
 </body>
