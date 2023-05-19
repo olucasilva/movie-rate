@@ -26,20 +26,37 @@
 
 <body>
     <?php
-        include '../components/header.php';
+    include '../components/header.php';
+    include '../components/loginDialog.php';
     ?>
     <section id="container">
         <?php
+        include '../server/connection.php';
+        $i = 0;
 
-        $data = "../data/series.xml";
-        $items = simplexml_load_file($data)->series;
-        $items = $items->serie;
+        $query = "select * from post";
+        $data = mysqli_query($connection, $query);
+        $item = mysqli_fetch_array($data);
+        $lenght = mysqli_num_rows($data);
 
-        foreach ($items as $item) {
-            include '../components/elementNews.php';
+        for ($i = 0; $i < $lenght; $i++) {
+            $id = $item["id"];
+            $title = $item['titulo'];
+            $content = $item['texto'];
+            $image = $item['imagem'];
+            
+            echo "<div class='news-element' id='newsElement'>
+                    <img class='detail-cover' id='moviePoster' src='../src/$image' />
+                    <div class='info'>
+                        <div class='news-title' id='ts'>
+                            <label for='title' id='newsTitle'>$title</label>
+                        </div>
+                        <div class='news-preview'>
+                            <p id='newsPreview'>$content</p>
+                        </div>
+                    </div>
+                  </div>";
         }
-
-        include '../components/loginDialog.php';
         ?>
     </section>
 </body>

@@ -12,7 +12,7 @@
 }
 
 .detail-cover {
-    max-width: 100%;
+    max-width: 30%;
     max-height: 100%;
     border: transparent;
     border-radius: 4px;
@@ -22,7 +22,7 @@
 
 .info {
     margin: 1vw;
-    height: 55vh;
+    max-height: 55vh;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -44,23 +44,24 @@
     align-items: flex-start;
 }
 
-.news-description {
-    overflow: scroll;
+.news-preview {
+    height: 30%;
+    overflow: hidden;
     scrollbar-width: thin;
     scrollbar-color: black transparent;
 }
 
-.news-description::-webkit-scrollbar {
+.news-preview::-webkit-scrollbar {
     width: 0.2em;
     height: 0.2em;
     /* A altura só é vista quando a rolagem é horizontal */
 }
 
-.news-description::-webkit-scrollbar-track {
+.news-preview::-webkit-scrollbar-track {
     background: transparent;
     padding: 0.125em;
 }
 
-.news-description::-webkit-scrollbar-thumb {
+.news-preview::-webkit-scrollbar-thumb {
     background-color: #000;
 }
