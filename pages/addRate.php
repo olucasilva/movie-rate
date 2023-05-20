@@ -1,3 +1,19 @@
+<?php
+include '../server/connection.php';
+session_start();
+if (!isset($_SESSION['id'])) {
+  header('Location: /');
+}
+if (isset($_GET['id'])) {
+  $id = $_GET['id'];
+
+  $query = "select titulo from filmes where id = $id";
+  $data = mysqli_query($connection, $query);
+  $item = mysqli_fetch_array($data);
+  $titulo = $item['titulo'];
+}
+?>
+
 <!-- Se não estiver logado, mandar para a tela de login -->
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -8,9 +24,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="stylesheet" href="../styles/form.css" />
+  <link rel="stylesheet" href="../styles/search.css" />
   <link rel="stylesheet" href="../styles/style.css" />
 
-  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
   <title>Adicionar Avaliação</title>
@@ -18,25 +34,36 @@
 
 <body>
   <section>
-    <form action="../server/rent.php" method="post" enctype="multipart/form-data">
+    <form action="../server/addrate.php" method="post" enctype="multipart/form-data">
       <legend>Novo Comentário</legend>
       <div class="div-input">
         <label for="movie">Filme</label>
         <br />
-        <input type="text" name="movie" required />
+        <?php
+        if (isset($titulo)) {
+          echo "<input type='hidden' name='movieId' value='$id'>";
+          echo "<input type='text' name='movie' value='$titulo' disabled />";
+        } else {
+          echo "<input type='text' name='movie' id='buscaInput' required autofocus/>";
+          echo "<input type='hidden' id='movieId' name='movieId'>";
+        }
+        ?>
+        <div id="resultadoBusca" class='result'>
+        </div>
+        <script src="../scripts/search.js"></script>
       </div>
       <br />
       <div class="div-input">
         <label for="rate">Nota (0 - 5)</label>
         <br />
         <!-- adicionar validaçao de tamanho -->
-        <input type="number" name="rate" min="0" max="5" required/>
+        <input type="number" name="rate" min="0" max="5" required />
       </div>
       <br />
       <div class="div-input">
-        <label for="coment">Comentário</label>
+        <label for="comment">Comentário</label>
         <br />
-        <textarea name="coment" placeholder="Deixe um breve comentário!" required></textarea>
+        <textarea name="comment" placeholder="Deixe um breve comentário!" required></textarea>
       </div>
       <br />
       <br />

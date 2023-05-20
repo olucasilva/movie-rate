@@ -1,0 +1,13 @@
+.result {
+  display: flex;
+  flex-direction: column;
+  width: 356.5px;
+  max-height: 100px;
+  overflow-y: scroll;
+  position: absolute;
+  background-color: #fff;
+}
+
+.label{
+  color: black;
+}

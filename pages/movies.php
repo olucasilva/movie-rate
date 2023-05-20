@@ -33,14 +33,14 @@
     include '../server/connection.php';
     $i = 0;
 
-    $query = "select * from filmes";
+    $query = "select f.id, f.titulo, f.imagem, sum(a.nota)/count(*) as nota from filmes f, avalia a where a.id_filme = f.id group by a.id_filme";
     $data = mysqli_query($connection, $query);
-    $item = mysqli_fetch_array($data);
-    $lenght = mysqli_num_rows($data);
-    for ($i = 0; $i < $lenght; $i++) {
+        
+    while ($item = mysqli_fetch_array($data)) {
       $id = $item["id"];
       $title = $item['titulo'];
       $poster_path = $item['imagem'];
+      $nota = round($item['nota'], 2);
 
       if ($i == 0) {
         echo "<div class='movies-rows'>";
@@ -50,7 +50,7 @@
                 <img class='filme' id='$id' src='https://image.tmdb.org/t/p/w220_and_h330_face$poster_path'/>
               </a>
               <label>$title</label>
-              <label>nota aqui</label>
+              <label>$nota</label>
             </div>";
       $i++;
       if ($i == 5) {

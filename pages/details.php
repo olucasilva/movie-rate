@@ -30,26 +30,51 @@ $id = $_GET['id'];
   <?php
   include '../components/header.php';
   include '../components/loginDialog.php';
-
   include '../server/connection.php';
 
   $query = "select * from filmes where id = $id";
   $data = mysqli_query($connection, $query);
-  $item = mysqli_fetch_array($data);
+  $movie = mysqli_fetch_array($data);
 
-  $title = $item['titulo'];
-  $poster_path = $item['imagem'];
-  $description = $item['descricao'];
+  $title = $movie['titulo'];
+  $poster_path = $movie['imagem'];
+  $description = $movie['descricao'];
+
   ?>
   <section id="container">
-  <img src="https://image.tmdb.org/t/p/w220_and_h330_face/<?php echo $poster_path ?>">
-  <br>
-  <?php
-  echo $title; ?>
-  <br>
-  <?php
-  echo $description;
-  ?>
+    <img src="https://image.tmdb.org/t/p/w220_and_h330_face/<?php echo $poster_path ?>">
+    <br>
+    <?php
+    echo $title; ?>
+    <br>
+    <?php
+    echo $description;
+    ?>
+    <div>
+      <a href="../pages/addRate.php?id=<?php echo $id?>"><button>Avaliar</button></a>
+      <h2>Comentários</h2>
+      <table>
+        <?php
+        $query = "select a.nota, a.comentario, a.datac, u.nome from avalia a, usuarios u where a.id_filme=$id and a.id_usuario=u.id;";
+        $result = mysqli_query($connection, $query);
+
+        while ($comment = mysqli_fetch_array($result)) {
+          $usuario = $comment['nome'];
+          $data = $comment['datac'];
+          $comentario = $comment['comentario'];
+          $nota = $comment['nota'];
+          echo "<tr>
+                  <td>$usuario</td>
+                  <td>$nota</td>
+                  <td>$data</td>
+                  <td>$comentario</td>
+                </tr>";
+        }
+
+        mysqli_close($connection);
+        ?>
+      </table>
+    </div>
   </section>
 </body>
 

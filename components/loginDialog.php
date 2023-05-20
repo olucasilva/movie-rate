@@ -2,7 +2,7 @@
 <div class='shadow'>
     <div class='container'>
         <label class='close' onclick='closeDialog()'>&#10006;</label>
-        <form action="../pages/login.php" method="post">
+        <form action="../server/login.php" method="post">
             <div>
                 <div class="input">
                     Email:
