@@ -44,7 +44,6 @@ include '../components/header.php';
         <td>Nota</td>
         <td>Comentario</td>
         <td>Data</td>
-        <td></td>
       </tr>
       <?php
       include '../server/connection.php';
@@ -55,7 +54,8 @@ include '../components/header.php';
         $id = $comment['id'];
         $usuario = $comment['nome'];
         $filme = $comment['titulo'];
-        $data = $comment['datac'];
+        $data = new DateTimeImmutable($comment['datac']);
+        $data = $data->format('m/d/Y');
         $comentario = $comment['comentario'];
         $nota = $comment['nota'];
         echo "<tr>

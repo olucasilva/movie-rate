@@ -27,9 +27,28 @@ $_SESSION['current'] = $urlCompleta;
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
 
-  <script src="../scripts/script.js"></script>
-
   <title>Filmes</title>
+  <style>
+        .avaliacao {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          padding: 0;
+        }
+
+        .nota {
+          display: flex;
+          overflow: hidden;
+          height: 50px;
+        }
+
+        .star-icon {
+          color: #ffe500;
+          width: 23px;
+          font-size: 30px;
+        }
+      </style>
 </head>
 
 <body>
@@ -58,9 +77,19 @@ $_SESSION['current'] = $urlCompleta;
               <a href='details.php?id=$id'>
                 <img class='filme' id='$id' src='https://image.tmdb.org/t/p/w220_and_h330_face$poster_path'/>
               </a>
-              <label>$title</label>
-              <label>$nota</label>
-            </div>";
+              <label>$title</label>";
+      ?>
+      <div class="nota" style="width: calc(23px*<?php echo $nota?>)">
+        <div class="avaliacao">
+          <div class="star-icon">&#9733;</div>
+          <div class="star-icon">&#9733;</div>
+          <div class="star-icon">&#9733;</div>
+          <div class="star-icon">&#9733;</div>
+          <div class="star-icon">&#9733;</div>
+        </div>
+      </div>
+      <?php
+      echo "</div>";
       $i++;
       if ($i == 5) {
         echo "</div>";

@@ -10,7 +10,7 @@ $_SESSION['current'] = $urlCompleta;
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
+<head> 
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -45,16 +45,14 @@ $_SESSION['current'] = $urlCompleta;
 
         $query = "select * from post";
         $data = mysqli_query($connection, $query);
-        $item = mysqli_fetch_array($data);
-        $lenght = mysqli_num_rows($data);
 
-        for ($i = 0; $i < $lenght; $i++) {
+        while ($item = mysqli_fetch_array($data)) {
             $id = $item["id"];
             $title = $item['titulo'];
             $content = $item['texto'];
             $image = $item['imagem'];
 
-            echo "<div class='news-element' id='newsElement'>
+            echo "<a href='post.php?id=$id' style='text-decoration: none; color: #fff'><div class='news-element' id='newsElement'>
                     <img class='detail-cover' id='moviePoster' src='../src/$image' />
                     <div class='info'>
                         <div class='news-title' id='ts'>
@@ -64,7 +62,7 @@ $_SESSION['current'] = $urlCompleta;
                             <p id='newsPreview'>$content</p>
                         </div>
                     </div>
-                  </div>";
+                  </div></a>";
         }
         ?>
     </section>

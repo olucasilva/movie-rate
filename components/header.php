@@ -7,12 +7,6 @@
         <nav>
             <div>
                 <ul>
-                    <?php
-                    if (isset($_SESSION['tipo']) && $_SESSION['tipo']==0) {
-                        echo "<li> <a class='navLink' href='../index.php'>Comentários</a></li>";
-                        echo "<li> <a class='navLink' href='../index.php'>Criar Publicação</a></li>";
-                    }
-                    ?>
                     <li> <a class="navLink" href="../index.php">Início</a></li>
                     <li>
                         <div class="dropdown">
@@ -30,6 +24,12 @@
                         </div>
                     </li>
                     <li> <a class="navLink" href="../pages/news.php">Notícias</a></li>
+                    <?php
+                    if (isset($_SESSION['tipo']) && $_SESSION['tipo']==0) {
+                        echo "<li> <a class='navLink' href='../admin/rates.php'>Avaliaçoes</a></li>";
+                        echo "<li> <a class='navLink' href='../admin/new.php'>Criar Publicação</a></li>";
+                    }
+                    ?>
                 </ul>
             </div>
         </nav>
@@ -41,7 +41,7 @@
             <div class='dropdown-content'>
                 <div class='losangle'></div>
                 <label class='navLink' onclick='openDialog()'>Login</label>
-                <a class='navLink' href='../server/logout.php'>Cadastro</a>
+                <a class='navLink' href='../pages/cadastro.php'>Cadastro</a>
             </div>
         </div></div>";
         } else {

@@ -47,15 +47,14 @@ ul>li {
   color: #fff;
 }
 
-.navLink:hover,
-#dropbrn {
+.navLink:hover{
   cursor: pointer;
   transition: 0.5s color ease;
   color: red;
 }
 
 .login {
-  max-width: 3vw;
+  max-width: fit-content;
   max-height: 3vw;
   display: flex;
   flex-direction: row-reverse;
@@ -72,6 +71,7 @@ ul>li {
 }
 
 .dropbtn {
+  width: fit-content;
   background-color: transparent;
   color: white;
   padding: 16px;

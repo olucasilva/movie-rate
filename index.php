@@ -1,3 +1,15 @@
+<?php
+session_start();
+
+$hostAtual = $_SERVER['HTTP_HOST'];
+$pathAtual = $_SERVER['REQUEST_URI'];
+$urlCompleta = "http://" . $hostAtual . $pathAtual;
+
+$_SESSION['current'] = $urlCompleta;
+
+include 'components/header.php';
+include 'components/loginDialog.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -21,18 +33,27 @@
 </head>
 
 <body>
-  <?php
-  session_start();
+  <section id="container">
+    <table>
+      <?php
+      include 'server/connection.php';
+      $query = "select * from `post` where `favorito`=1";
+      $result = mysqli_query($connection, $query);
 
-  $hostAtual = $_SERVER['HTTP_HOST'];
-  $pathAtual = $_SERVER['REQUEST_URI'];
-  $urlCompleta = "http://" . $hostAtual . $pathAtual;
+      while ($post = mysqli_fetch_array($result)) {
+        $id = $post['id'];
+        $titulo = $post['titulo'];
+        $imagem = $post['imagem'];
 
-  $_SESSION['current'] = $urlCompleta;
-
-  include 'components/header.php';
-  include 'components/loginDialog.php';
-  ?>
+        echo "<tr>
+            <td>$id</td>
+            <td>$titulo</td>
+            <td><img src='../src$imagem' style='width: 100px'></td>
+          </tr>";
+      }
+      ?>
+    </table>
+  </section>
 </body>
 
 </html>
