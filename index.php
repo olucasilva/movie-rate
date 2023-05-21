@@ -22,6 +22,14 @@
 
 <body>
   <?php
+  session_start();
+
+  $hostAtual = $_SERVER['HTTP_HOST'];
+  $pathAtual = $_SERVER['REQUEST_URI'];
+  $urlCompleta = "http://" . $hostAtual . $pathAtual;
+
+  $_SESSION['current'] = $urlCompleta;
+
   include 'components/header.php';
   include 'components/loginDialog.php';
   ?>

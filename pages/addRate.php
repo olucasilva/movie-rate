@@ -1,8 +1,10 @@
 <?php
 include '../server/connection.php';
 session_start();
+
 if (!isset($_SESSION['id'])) {
-  header('Location: /');
+  $current = $_SESSION['current'];
+  header('Location: ' . $current);
 }
 if (isset($_GET['id'])) {
   $id = $_GET['id'];
@@ -12,6 +14,13 @@ if (isset($_GET['id'])) {
   $item = mysqli_fetch_array($data);
   $titulo = $item['titulo'];
 }
+
+$hostAtual = $_SERVER['HTTP_HOST'];
+$pathAtual = $_SERVER['REQUEST_URI'];
+$urlCompleta = "http://" . $hostAtual . $pathAtual;
+
+$_SESSION['current'] = $urlCompleta;
+
 ?>
 
 <!-- Se não estiver logado, mandar para a tela de login -->

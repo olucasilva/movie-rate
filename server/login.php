@@ -1,16 +1,25 @@
 <?php
 session_start();
-$email=$_POST['email'];
-$password=$_POST['password'];
+
+$current = $_SESSION['current'];
+
+$email = $_POST['email'];
+$password = $_POST['password'];
 
 include '../server/connection.php';
 
-$query = "select id from usuarios where email='$email' and senha='$password'";
-$data = mysqli_query($connection, $query);
-$item = mysqli_fetch_array($data);
-        
+$query = "select id, nome, tipo from usuarios where email='$email' and senha='$password'";
+$result = mysqli_query($connection, $query);
+$item = mysqli_fetch_array($result);
+
 if (isset($item['id'])) {
-    $_SESSION['id']=$item['id'];
+    $_SESSION['id'] = $item['id'];
+    $_SESSION['nome'] = $item['nome'];
+    $_SESSION['tipo'] = $item['tipo'];
 }
-header('Location: /');
+if ($_SESSION['tipo'] == '0') {
+    header('Location: ../admin/rates.php');
+} else {
+    header('Location: ' . $current);
+}
 ?>

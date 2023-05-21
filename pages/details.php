@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+$hostAtual = $_SERVER['HTTP_HOST'];
+$pathAtual = $_SERVER['REQUEST_URI'];
+$urlCompleta = "http://" . $hostAtual . $pathAtual;
+$_SESSION['current'] = $urlCompleta;
+
 $id = $_GET['id'];
 ?>
 <!DOCTYPE html>
@@ -45,17 +52,21 @@ $id = $_GET['id'];
     <img src="https://image.tmdb.org/t/p/w220_and_h330_face/<?php echo $poster_path ?>">
     <br>
     <?php
-    echo $title; ?>
-    <br>
-    <?php
+    echo $title;
+    echo "<br>";
     echo $description;
+    echo "<br>";
+    if (isset($_SESSION['id'])) {
+      echo "<a href='../pages/addRate.php?id=<?php echo $id?>'><button>Avaliar</button></a>";
+    } else {
+      echo "<button onclick='alert(`Você precisa estar logado para deixar uma avaliação`)'>Avaliar</button>";
+    }
     ?>
     <div>
-      <a href="../pages/addRate.php?id=<?php echo $id?>"><button>Avaliar</button></a>
       <h2>Comentários</h2>
       <table>
         <?php
-        $query = "select a.nota, a.comentario, a.datac, u.nome from avalia a, usuarios u where a.id_filme=$id and a.id_usuario=u.id;";
+        $query = "select a.nota, a.comentario, a.datac, u.nome from avalia a, usuarios u where a.id_filme=$id and a.id_usuario=u.id";
         $result = mysqli_query($connection, $query);
 
         while ($comment = mysqli_fetch_array($result)) {

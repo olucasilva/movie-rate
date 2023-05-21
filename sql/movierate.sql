@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Tempo de geração: 15-Maio-2023 às 21:02
+-- Host: localhost
+-- Tempo de geração: 21-Maio-2023 às 03:09
 -- Versão do servidor: 10.4.22-MariaDB
--- versão do PHP: 8.0.15
+-- versão do PHP: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -36,6 +36,13 @@ CREATE TABLE `avalia` (
   `datac` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Extraindo dados da tabela `avalia`
+--
+
+INSERT INTO `avalia` (`id`, `id_filme`, `id_usuario`, `nota`, `comentario`, `datac`) VALUES
+(2, 245913, 2, 4, 'Descreve bem a história do jogador!', '2023-05-21');
+
 -- --------------------------------------------------------
 
 --
@@ -47,16 +54,16 @@ CREATE TABLE `filmes` (
   `titulo` varchar(255) DEFAULT NULL,
   `descricao` varchar(1000) DEFAULT NULL,
   `imagem` varchar(255) DEFAULT NULL,
-  `datac` date DEFAULT NULL,
-  `duracao` int(11) DEFAULT NULL
+  `datac` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `filmes`
 --
 
-INSERT INTO `filmes` (`id`, `titulo`, `descricao`, `imagem`, `datac`, `duracao`) VALUES
-(238, 'O Poderoso Chefão', 'Em 1945, Don Corleone é o chefe de uma mafiosa família italiana de Nova York. Ele costuma apadrinhar várias pessoas, realizando importantes favores para elas, em troca de favores futuros. Com a chegada das drogas, as famílias começam uma disputa pelo promissor mercado. Quando Corleone se recusa a facilitar a entrada dos narcóticos na cidade, não oferecendo ajuda política e policial, sua família começa a sofrer atentados para que mudem de posição. É nessa complicada época que Michael, um herói de guerra nunca envolvido nos negócios da família, vê a necessidade de proteger o seu pai e tudo o que ele construiu ao longo dos anos.', '/oJagOzBu9Rdd9BrciseCm3U3MCU.jpg', '2000-10-01', NULL);
+INSERT INTO `filmes` (`id`, `titulo`, `descricao`, `imagem`, `datac`) VALUES
+(245913, 'Pelé: O Nascimento de uma Lenda', 'Com apenas 17 anos, Pelé, o maior jogador de futebol de todos os tempos, conduz o Brasil na campanha do título da Copa do Mundo de 1958.', '/2MPFN2TjGo7Q6ThSTmvOXF18Vbh.jpg', '2016-05-06'),
+(640146, 'Homem-Formiga e a Vespa: Quantumania', 'Scott Lang e Hope van Dyne em suas jornadas como super-heróis. Scott e sua família são puxados para o Reino Quântico, onde eles precisarão enfrentar um novo e terrível vilão: Kang, o Conquistador e M.O.D.O.K..', '/pDNT1gXhZEV1V70eCVmJAQNEqBl.jpg', '2023-02-15');
 
 -- --------------------------------------------------------
 
@@ -74,13 +81,6 @@ CREATE TABLE `post` (
   `titulo` varchar(255) DEFAULT NULL,
   `imagem` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `post`
---
-
-INSERT INTO `post` (`id`, `id_filme`, `id_usuario`, `datac`, `texto`, `favorito`, `titulo`, `imagem`) VALUES
-(1, 238, 1, '2023-05-15', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet id modi optio mollitia odit, voluptas dignissimos possimus labore praesentium quisquam sit quam. At consequuntur nam assumenda, aspernatur nihil est illo?Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet id modi optio mollitia odit, voluptas dignissimos possimus labore praesentium quisquam sit quam. \r\nAt consequuntur nam assumenda, aspernatur nihil est illo?Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet id modi optio mollitia odit, voluptas dignissimos possimus labore praesentium quisquam sit quam. At consequuntur nam assumenda, aspernatur nihil est illo?Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet id modi optio mollitia odit, voluptas dignissimos possimus labore praesentium quisquam sit quam. At consequuntur nam assumenda, aspernatur nihil est illo?Lorem ipsum dolor sit amet consectetur adipisicing elit.\r\nEveniet id modi optio mollitia odit, voluptas dignissimos possimus labore praesentium quisquam sit quam. At consequuntur nam assumenda, aspernatur nihil est illo?', NULL, 'Lorem ipsum', 'lorem.png');
 
 -- --------------------------------------------------------
 
@@ -102,7 +102,9 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `tipo`, `nome`, `email`, `senha`, `data_de_nascimento`) VALUES
-(1, '0', 'admin', 'admin@admin.com', 'admin', '2001-03-19');
+(1, '0', 'admin', 'admin@admin.com', 'admin', '2001-03-19'),
+(2, '1', 'user1', 'user1@bol.com', 'user1', '1998-07-24'),
+(3, '1', 'user2', 'user2@bol.com', 'user2', '2003-06-11');
 
 --
 -- Índices para tabelas despejadas
@@ -135,6 +137,28 @@ ALTER TABLE `post`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `avalia`
+--
+ALTER TABLE `avalia`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de tabela `post`
+--
+ALTER TABLE `post`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restrições para despejos de tabelas

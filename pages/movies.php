@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+$hostAtual = $_SERVER['HTTP_HOST'];
+$pathAtual = $_SERVER['REQUEST_URI'];
+$urlCompleta = "http://" . $hostAtual . $pathAtual;
+
+$_SESSION['current'] = $urlCompleta;
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -35,7 +44,7 @@
 
     $query = "select f.id, f.titulo, f.imagem, sum(a.nota)/count(*) as nota from filmes f, avalia a where a.id_filme = f.id group by a.id_filme";
     $data = mysqli_query($connection, $query);
-        
+
     while ($item = mysqli_fetch_array($data)) {
       $id = $item["id"];
       $title = $item['titulo'];

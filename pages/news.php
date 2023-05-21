@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+$hostAtual = $_SERVER['HTTP_HOST'];
+$pathAtual = $_SERVER['REQUEST_URI'];
+$urlCompleta = "http://" . $hostAtual . $pathAtual;
+
+$_SESSION['current'] = $urlCompleta;
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -44,7 +53,7 @@
             $title = $item['titulo'];
             $content = $item['texto'];
             $image = $item['imagem'];
-            
+
             echo "<div class='news-element' id='newsElement'>
                     <img class='detail-cover' id='moviePoster' src='../src/$image' />
                     <div class='info'>

@@ -17,8 +17,8 @@ h1 {
   color: #ff0000;
 }
 
-nav {
-  width: 35vw;
+nav, nav>div {
+  width: 60vw;
 }
 
 .menu {
@@ -28,6 +28,7 @@ nav {
 }
 
 ul {
+  width: 100%;
   display: flex;
   list-style: none;
   justify-content: space-evenly;
@@ -35,7 +36,7 @@ ul {
 }
 
 ul>li {
-  width: 100vw;
+  width: fit-content;
   display: flex;
   justify-content: center;
   font-size: 1em;
@@ -48,6 +49,7 @@ ul>li {
 
 .navLink:hover,
 #dropbrn {
+  cursor: pointer;
   transition: 0.5s color ease;
   color: red;
 }
@@ -94,14 +96,14 @@ ul>li {
   top: 35px;
 }
 
-.dropdown-content a {
+.dropdown-content a, .dropdown-content label {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
 
-.dropdown-content a:hover {
+.dropdown-content a:hover{
   background-color: #ddd;
 }
 
