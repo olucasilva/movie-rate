@@ -1,7 +1,15 @@
 <script src="../scripts/login.js"></script>
 <header>
     <div>
-        <h1>Avalia Filmes</h1>
+        <?php
+            $root = $_SERVER['REQUEST_URI'];
+
+            if ($root === "/"){
+                echo '<a href="index.php" class="logo"><img class="logo" src="src\logo.png" alt="Logo Rate-Movies"></a>';
+            } else { 
+                echo '<a href="../index.php" class="logo"><img class="logo" src="..\src\logo.png" alt="Logo Rate-Movies"></a>';
+            }
+        ?>
     </div>
     <div class="menu">
         <nav>

@@ -28,27 +28,6 @@ $_SESSION['current'] = $urlCompleta;
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
 
   <title>Filmes</title>
-  <style>
-        .avaliacao {
-          display: flex;
-          flex-direction: row;
-          justify-content: flex-start;
-          align-items: center;
-          padding: 0;
-        }
-
-        .nota {
-          display: flex;
-          overflow: hidden;
-          height: 50px;
-        }
-
-        .star-icon {
-          color: #ffe500;
-          width: 23px;
-          font-size: 30px;
-        }
-      </style>
 </head>
 
 <body>
@@ -75,7 +54,7 @@ $_SESSION['current'] = $urlCompleta;
       }
       echo "<div class='element-movie'>
               <a href='details.php?id=$id'>
-                <img class='filme' id='$id' src='https://image.tmdb.org/t/p/w220_and_h330_face$poster_path'/>
+                <img class='filme' id='$id' src='../src/$poster_path'/>
               </a>
               <label>$title</label>";
       ?>

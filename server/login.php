@@ -17,9 +17,5 @@ if (isset($item['id'])) {
     $_SESSION['nome'] = $item['nome'];
     $_SESSION['tipo'] = $item['tipo'];
 }
-if ($_SESSION['tipo'] == '0') {
-    header('Location: ../admin/rates.php');
-} else {
-    header('Location: ' . $current);
-}
+header('Location: ' . $current);
 ?>

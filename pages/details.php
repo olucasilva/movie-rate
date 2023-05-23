@@ -49,56 +49,67 @@ $id = $_GET['id'];
 
   ?>
   <section id="container">
-    <img src="https://image.tmdb.org/t/p/w220_and_h330_face/<?php echo $poster_path ?>">
-    <br>
-    <?php
-    echo $title;
-    echo "<br>";
-    echo $description;
-    echo "<br>";
-    if (isset($_SESSION['id'])) {
-      echo "<a href='../pages/addRate.php?id=$id'><button>Avaliar</button></a>";
-    } else {
-      echo "<button onclick='alert(`Você precisa estar logado para deixar uma avaliação`)'>Avaliar</button>";
-    }
-    ?>
-    <div>
-      <h2>Comentários</h2>
-      <table border="1px" style="margin: 0 auto">
-        <tr>
-          <td>Usuário</td>
-          <td>Nota</td>
-          <td>Data</td>
-          <td>Comentario</td>
-        </tr>
+    <div class="title">
+      <label for="title">
         <?php
-        $query = "select a.id, a.nota, a.comentario, a.datac, a.id_usuario, u.nome from avalia a, usuarios u where a.id_filme=$id and a.id_usuario=u.id";
-        $result = mysqli_query($connection, $query);
-
-        while ($comment = mysqli_fetch_array($result)) {
-          $idComment = $comment['id'];
-          $idUsuario = $comment['id_usuario'];
-          $usuario = $comment['nome'];
-          $data = new DateTimeImmutable($comment['datac']);
-          $data = $data->format('m/d/Y');
-          $comentario = $comment['comentario'];
-          $nota = $comment['nota'];
-          echo "<tr>
-                  <td>$usuario</td>
-                  <td>$nota</td>
-                  <td>$data</td>
-                  <td>$comentario</td>";
-          if ($idUsuario==$idLogado) {
-            echo "<td><a href='../pages/updateRate.php?id=$idComment'>&#9998;</a></td>
-                  <td><a href='../server/excluiComentario.php?id=$idComment'>&#10006;</a></td>";
-          }
-          echo "</tr>";
-        }
-
-        mysqli_close($connection);
+        echo $title;
         ?>
+      </label>
+    </div>
+    <div class="details">
+      <div class="image">
+        <img src="https://image.tmdb.org/t/p/w220_and_h330_face/<?php echo $poster_path ?>">
+      </div>
+      <div class="content">
+        <div class="description">
+          <?php
+          echo $description;
+          ?>
+        </div>
+        <div>
+          <?php
+          if (isset($_SESSION['id'])) {
+            echo "<br><a href='../pages/addRate.php?id=$id'><button>Avaliar</button></a>";
+          } else {
+            echo "<br><button onclick='alert(`Você precisa estar logado para deixar uma avaliação`)'>Avaliar</button>";
+          }
+          ?>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="title">
+        <label for="title">
+          Comentários
+        </label>
+      </div>
+      <?php
+      $query = "select a.id, a.nota, a.comentario, a.datac, a.id_usuario, u.nome from avalia a, usuarios u where a.id_filme=$id and a.id_usuario=u.id";
+      $result = mysqli_query($connection, $query);
+
+      while ($comment = mysqli_fetch_array($result)) {
+        $idComment = $comment['id'];
+        $idUsuario = $comment['id_usuario'];
+        $usuario = $comment['nome'];
+        $data = new DateTimeImmutable($comment['datac']);
+        $data = $data->format('m/d/Y');
+        $comentario = $comment['comentario'];
+        $nota = $comment['nota'];
+        $image = '/logo.png';
+
+        include '../components/comment.php';
+
+        // if ($idUsuario == $idLogado) {
+        //   echo "<td><a href='../pages/updateRate.php?id=$idComment'>&#9998;</a></td>
+        //         <td><a href='../server/excluiComentario.php?id=$idComment'>&#10006;</a></td>";
+        // }
+      }
+
+      mysqli_close($connection);
+      ?>
       </table>
     </div>
+    <footer></footer>
   </section>
 </body>
 

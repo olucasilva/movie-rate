@@ -38,6 +38,8 @@ if ($path !== false) {
   file_put_contents($path, $dadosImagem);
 }
 
-$query = "insert into `filmes`(`id`, `titulo`, `descricao`, `imagem`, `datac`) values ('$data->id','$data->title','$data->overview','$data->poster_path','$data->release_date')";
+$overview = htmlspecialchars($data->overview, ENT_QUOTES);
+
+$query = "insert into `filmes`(`id`, `titulo`, `descricao`, `imagem`, `datac`) values ('$data->id','$data->title','$overview','$data->poster_path','$data->release_date')";
 mysqli_query($connection, $query);
 ?>

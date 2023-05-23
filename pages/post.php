@@ -5,7 +5,11 @@ $hostAtual = $_SERVER['HTTP_HOST'];
 $pathAtual = $_SERVER['REQUEST_URI'];
 $urlCompleta = "http://" . $hostAtual . $pathAtual;
 $_SESSION['current'] = $urlCompleta;
-
+if (isset($_SESSION['tipo'])) {
+  $userType = $_SESSION['tipo'];
+} else {
+  $userType = 1;
+}
 $id = $_GET['id'];
 ?>
 <!DOCTYPE html>
@@ -18,7 +22,7 @@ $id = $_GET['id'];
 
   <link rel="stylesheet" href="../styles/style.css" />
   <link rel="stylesheet" href="../styles/header.css">
-  <link rel="stylesheet" href="../styles/details.css">
+  <link rel="stylesheet" href="../styles/post.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,7 +34,7 @@ $id = $_GET['id'];
 
   <script src="../scripts/cart.js"></script>
 
-  <title>PopFlix - Filmes</title>
+  <title>Rate Movies</title>
 </head>
 
 <body>
@@ -46,17 +50,38 @@ $id = $_GET['id'];
   $title = $post['titulo'];
   $poster_path = $post['imagem'];
   $description = $post['texto'];
+  $isFavorite = $post['favorito'];
 
   ?>
   <section id="container">
-    <?php
-    echo "<h1>$title</h1>";
-    echo "<br>";
-    echo "<img style='max-width: 100%' src='../src$poster_path'>";
-    echo "<br>";
-    echo $description;
-    echo "<br>"
-    ?>
+    <div class="topo">
+      <label for="title" class="title">
+        <?php
+        echo $title;
+        ?>
+      </label>
+      <?php
+      if ($userType == 0) {
+        if ($isFavorite == 1) {
+          echo "<div class='favorite'>
+          &#9733;
+        </div>";
+        } else {
+          echo "<div class='favorite'>
+          &#9734;
+        </div>";
+        }
+      }
+      ?>
+    </div>
+    <div class="image">
+      <img src="../src<?php echo $poster_path; ?>" alt="">
+    </div>
+    <div class="content">
+      <?php
+      echo $description;
+      ?>
+    </div>
   </section>
 </body>
 

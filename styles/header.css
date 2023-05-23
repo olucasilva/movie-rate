@@ -12,9 +12,17 @@ header {
   padding: 2vw;
 }
 
-h1 {
+/*h1 {
   font-size: 4.5em;
   color: #ff0000;
+}*/
+
+.logo{
+max-width: 180px;
+width: auto;
+height: auto;
+cursor: pointer;
+margin-bottom: 10px;
 }
 
 nav, nav>div {
@@ -50,7 +58,7 @@ ul>li {
 .navLink:hover{
   cursor: pointer;
   transition: 0.5s color ease;
-  color: red;
+  color: #d1bc00;
 }
 
 .login {
@@ -66,7 +74,7 @@ ul>li {
 
 .login:hover {
   transition: 0.5s color ease;
-  color: red;
+  color: #d1bc00;
   cursor: pointer;
 }
 

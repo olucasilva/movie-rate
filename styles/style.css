@@ -12,9 +12,9 @@ body {
   overflow-x: hidden;
   background: rgb(0, 0, 0);
   background: radial-gradient(circle,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 0, 0.896796218487395) 50%,
-      rgba(0, 0, 0, 1) 100%);
+      rgb(15, 15, 15) 0%,
+      rgba(15, 15, 15, 0.9) 50%,
+      rgba(15, 15, 15, 1) 100%);
   color: #e5e5e5;
   overflow: scroll;
   scrollbar-width: thin;
@@ -36,10 +36,10 @@ body {
   }
 }
 
-/* Ajustar o tamanho da fonte para telas maiores que 3840px (resolução 4k) */
-@media (min-width: 3840px) {
+/* Ajustar o tamanho da fonte para telas maiores que 3815px (resolução 4k) */
+@media (min-width: 3815px) {
   body {
-    font-size: 40px;
+    font-size: 15px;
   }
 }
 
@@ -66,5 +66,8 @@ input {
   position: absolute;
   bottom: 0;
   left: 15vw;
-  padding-bottom: 16px;
+  padding-bottom: 25px;
+}
+footer{
+  height: 10vh;
 }

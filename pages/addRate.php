@@ -66,7 +66,7 @@ $_SESSION['current'] = $urlCompleta;
         <label for="rate">Nota (0 - 5)</label>
         <br />
         <!-- adicionar validaçao de tamanho -->
-        <input type="number" name="rate" min="0" max="5" required />
+        <input type="number" step="0.01" name="rate" min="0" max="5" required />
       </div>
       <br />
       <div class="div-input">
