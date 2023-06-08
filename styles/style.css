@@ -62,12 +62,29 @@ input {
 }
 #container {
   width: 70vw;
-  height: 75vh;
+  height: 70vh;
   position: absolute;
   bottom: 0;
   left: 15vw;
+  top: 30vh;
   padding-bottom: 25px;
 }
 footer{
   height: 10vh;
+}
+a{
+  text-decoration: none;
+  color: #e5e5e5;
+}
+.goback{
+  width: fit-content;
+  margin-left: 2vh;
+  font-size: 3em;
+  font-weight: bolder;
+  transition: all 1s ease;
+}
+.goback:hover{
+  transform: scale(1.1);
+  color: red;
+  cursor: pointer;
 }

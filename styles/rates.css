@@ -1,0 +1,59 @@
+table,
+th,
+td {
+  border: 1px solid black;
+  width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  margin: auto;
+  background-color: #FFF;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: center;
+  color: #000;
+  min-width: 150px;
+}
+
+.editar {
+  color: #000;
+}
+
+.editar:hover {
+  text-decoration: underline;
+}
+
+tr:nth-child(even) {
+  background-color: #9e9e9e8c;
+}
+
+tr:nth-child(odd) {
+  background-color: #9e9e9e;
+  color: #fff;
+}
+th {
+  background-color: #000000ef;
+  font-weight: bold;
+  color: #fff;
+}
+
+.excluir:hover {
+  color: #ff0000;
+  cursor: pointer;
+}
+
+.favorite {
+  display: flex;
+  font: 1.5em bold;
+  flex-direction: row;
+  justify-content: center;
+  color: #000;
+}
+
+.favorite:hover {
+  cursor: pointer;
+}

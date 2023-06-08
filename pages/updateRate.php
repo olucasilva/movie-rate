@@ -42,30 +42,30 @@ $_SESSION['current'] = $urlCompleta;
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
-  <title>Adicionar Avaliação</title>
+  <title>Atualizar Avaliação</title>
 </head>
 
 <body>
   <section>
     <form action="../server/updaterate.php" method="post" enctype="multipart/form-data">
       <legend>Novo Comentário</legend>
+      <label for="movie">Filme</label>
       <div class="div-input">
-        <label for="movie">Filme</label>
         <br />
         <input type='hidden' name='rateId' value="<?php echo $id ?>">
         <input type='hidden' name='movieId' value="<?php echo $idFilme ?>">
         <input type='text' name='movie' value='<?php echo $titulo ?>' disabled />
       </div>
       <br />
+      <label for="rate">Nota (0 - 5)</label>
       <div class="div-input">
-        <label for="rate">Nota (0 - 5)</label>
         <br />
         <!-- adicionar validaçao de tamanho -->
         <input type="number" step="0.01" name="rate" min="0" max="5" value="<?php echo $nota ?>" required />
       </div>
       <br />
+      <label for="comment">Comentário</label>
       <div class="div-input">
-        <label for="comment">Comentário</label>
         <br />
         <textarea name="comment" required><?php echo $comentario?></textarea>
       </div>
@@ -75,7 +75,7 @@ $_SESSION['current'] = $urlCompleta;
       <br />
       <div class="div-input">
         <label for="button" class="button">
-          <button type="submit">Alterar</button>
+          <button type="submit">Atualizar</button>
         </label>
       </div>
     </form>

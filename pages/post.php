@@ -11,6 +11,20 @@ if (isset($_SESSION['tipo'])) {
   $userType = 1;
 }
 $id = $_GET['id'];
+
+include '../components/header.php';
+include '../components/loginDialog.php';
+include '../server/connection.php';
+
+$query = "select * from post where id = $id";
+$data = mysqli_query($connection, $query);
+$post = mysqli_fetch_array($data);
+
+$title = $post['titulo'];
+$poster_path = $post['imagem'];
+$description = $post['texto'];
+$isFavorite = $post['favorito'];
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -32,27 +46,10 @@ $id = $_GET['id'];
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
 
-  <script src="../scripts/cart.js"></script>
-
-  <title>Rate Movies</title>
+  <title><?php echo $title ?></title>
 </head>
 
 <body>
-  <?php
-  include '../components/header.php';
-  include '../components/loginDialog.php';
-  include '../server/connection.php';
-
-  $query = "select * from post where id = $id";
-  $data = mysqli_query($connection, $query);
-  $post = mysqli_fetch_array($data);
-
-  $title = $post['titulo'];
-  $poster_path = $post['imagem'];
-  $description = $post['texto'];
-  $isFavorite = $post['favorito'];
-
-  ?>
   <section id="container">
     <div class="topo">
       <label for="title" class="title">
@@ -63,23 +60,23 @@ $id = $_GET['id'];
       <?php
       if ($userType == 0) {
         if ($isFavorite == 1) {
-          echo "<div class='favorite'>
+          echo "<a href='../server/favorite.php?id=$id&isfavorite=1' class='favorite'>
           &#9733;
-        </div>";
+        </a>";
         } else {
-          echo "<div class='favorite'>
+          echo "<a href='../server/favorite.php?id=$id&isfavorite=0' class='favorite'>
           &#9734;
-        </div>";
+        </a>";
         }
       }
       ?>
     </div>
     <div class="image">
-      <img src="../src<?php echo $poster_path; ?>" alt="">
+      <img src="../src/posts<?php echo $poster_path; ?>" alt="">
     </div>
     <div class="content">
       <?php
-      echo $description;
+      echo nl2br($description);
       ?>
     </div>
   </section>

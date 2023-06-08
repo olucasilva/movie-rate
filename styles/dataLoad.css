@@ -1,3 +1,13 @@
+.rate {
+  display: flex;
+  width: 115px;
+  flex-direction: row;
+  justify-content: flex-start;
+  overflow: hidden;
+  height: 10%;
+  cursor: default;
+}
+
 .movies-rows {
   width: 100%;
   height: 45vh;
@@ -18,9 +28,10 @@
   transition: all 0.3s ease;
   align-items: center;
   padding: 2vh;
+  overflow: hidden;
 }
 
-.element-movie>a {
+.link {
   display: flex;
   width: 100%;
   height: 75%;
@@ -28,11 +39,27 @@
   justify-content: center;
 }
 
-.element-movie>label {
-  font-size: 14px;
-  height: 15%;
+.title {
+  font-size: 1.3em;
+  height: fit-content;
+  width: 100%;
   text-align: center;
+  white-space: nowrap;
   overflow: hidden;
+}
+
+.title-text:hover{
+  animation: rotateText 3s linear ;
+}
+
+@keyframes rotateText {
+  0% {
+    transform: translateX(5%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 .filme {
@@ -62,7 +89,7 @@
   display: flex;
   flex-direction: row;
   overflow: hidden;
-  height: 10%;
+  position: absolute;
 }
 
 .star-icon {

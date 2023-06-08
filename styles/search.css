@@ -1,7 +1,7 @@
 .result {
   display: flex;
   flex-direction: column;
-  width: 356.5px;
+  width: 34vw;
   max-height: 100px;
   overflow-y: scroll;
   position: absolute;

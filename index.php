@@ -20,6 +20,10 @@ include 'components/loginDialog.php';
 
   <link rel="stylesheet" href="../styles/style.css" />
   <link rel="stylesheet" href="../styles/header.css">
+  <link rel="stylesheet" href="../styles/slideshow.css">
+
+  <script src="../scripts/slideshow.js"></script>
+  <script src="https://kit.fontawesome.com/9c674c2acd.js" crossorigin="anonymous"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,30 +33,41 @@ include 'components/loginDialog.php';
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
 
-  <title>PopFlix - Filmes</title>
+  <title>Rate Movies</title>
 </head>
 
 <body>
   <section id="container">
-    <table>
-      <?php
-      include 'server/connection.php';
-      $query = "select * from `post` where `favorito`=1";
-      $result = mysqli_query($connection, $query);
+        <?php
+        include 'server/connection.php';
+        $query = "select * from `post` where `favorito`=1 order by datac desc";
+        $result = mysqli_query($connection, $query);
+        $qtd = mysqli_num_rows($result);
 
-      while ($post = mysqli_fetch_array($result)) {
-        $id = $post['id'];
-        $titulo = $post['titulo'];
-        $imagem = $post['imagem'];
+        if ($qtd>0) {
+          echo '<div class="carousel">';
+          echo '<div class="carousel-container">';
+        }
+        while ($post = mysqli_fetch_array($result)) {
+          $id = $post['id'];
+          $titulo = $post['titulo'];
+          $imagem = $post['imagem'];
 
-        echo "<tr>
-            <td>$id</td>
-            <td>$titulo</td>
-            <td><img src='../src$imagem' style='width: 100px'></td>
-          </tr>";
-      }
-      ?>
-    </table>
+          echo '<div class="slide">';
+          echo '<a href="../pages/post.php?id='.$id.'">';
+          echo '<img src="../src/posts' . $imagem . '" alt="' . $titulo . '">';
+          echo '<div class="caption">' . $titulo . '</div>';
+          echo '</a>';
+          echo '</div>';
+        }
+        if ($qtd>0) {
+          echo '</div>';
+          echo '<ul class="indicators"></ul>';
+          echo '<button class="prev"><i class="fas fa-chevron-left"></i></button>';
+          echo '<button class="next"><i class="fas fa-chevron-right"></i></button>';
+          echo '</div>';
+        }
+        ?>
   </section>
 </body>
 

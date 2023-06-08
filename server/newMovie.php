@@ -28,7 +28,7 @@ if ($response === false) {
 $data = json_decode($response);
 
 $url = 'https://image.tmdb.org/t/p/w220_and_h330_face' . $data->poster_path; // URL da imagem
-$path = '../src' . $data->poster_path; // Caminho de destino local para salvar a imagem
+$path = '../src/movies' . $data->poster_path; // Caminho de destino local para salvar a imagem
 
 // Obtém os dados da imagem da URL
 $dadosImagem = file_get_contents($url);

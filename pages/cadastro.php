@@ -21,37 +21,54 @@
 
 <body>
   <section>
+    <span onclick="history.back()" class="goback">
+      &#8617;
+    </span>
     <form action="../server/cadastro.php" method="post" enctype="multipart/form-data">
       <legend>Cadastro</legend>
+      <label for="first-name">Nome</label>
       <div class="div-input">
-        <label for="first-name">Nome</label>
         <br />
         <input type="text" name="nome" placeholder="Digite seu nome" required />
       </div>
       <br />
+      <label for="email">E-mail</label>
       <div class="div-input">
-        <label for="email">E-mail</label>
         <br />
         <input type="email" name="email" placeholder="Digite seu email" required />
       </div>
       <br />
+      <label for="password">Senha</label>
       <div class="div-input">
-        <label for="password">Senha</label>
         <br />
         <input type="password" name="password" placeholder="Digite uma senha" required id="password" />
       </div>
       <br />
+      <label for="re-password">Repita a Senha</label>
       <div class="div-input">
-        <label for="re-password">Repita a Senha</label>
         <br />
         <input type="password" name="re-password" placeholder="Repita a senha" required id="re-password" />
       </div>
       <br />
+      <label for="birth-date">Data de Nascimento </label>
       <div class="div-input">
-        <label for="birth-date">Data de Nascimento </label>
         <br />
         <input type="date" name="birth-date" required />
       </div>
+      
+      <label for="">Imagem de perfil</label>
+      <div class="div-input">
+        <div class="div-file">
+          <div class="div-input-file">
+            <label class="input-personalizado">
+              <span class="botao-selecionar">Selecione uma imagem</span>
+              <input type="file" class="input-file" name="image" accept="image/*">
+            </label>
+          </div>
+          <img class="imagem" />
+        </div>
+      </div>
+      
       <br />
       <br />
       <hr />

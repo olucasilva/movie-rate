@@ -53,20 +53,31 @@ $_SESSION['current'] = $urlCompleta;
         echo "<div class='movies-rows'>";
       }
       echo "<div class='element-movie'>
-              <a href='details.php?id=$id'>
-                <img class='filme' id='$id' src='../src/$poster_path'/>
+              <a href='details.php?id=$id' class='link'>
+                <img class='filme' id='$id' src='../src/movies$poster_path'/>
               </a>
-              <label>$title</label>";
+              <div class='title'><div class='title-text'>$title</div></div>";
       ?>
-      <div class="nota" style="width: calc(23px*<?php echo $nota?>)">
-        <div class="avaliacao">
-          <div class="star-icon">&#9733;</div>
-          <div class="star-icon">&#9733;</div>
-          <div class="star-icon">&#9733;</div>
-          <div class="star-icon">&#9733;</div>
-          <div class="star-icon">&#9733;</div>
-        </div>
-      </div>
+      <a title="<?php echo number_format($nota, 2, ',', '.') ?>" class="rate">
+            <div class="nota" style="width: calc(23px*$nota)">
+                <div class="avaliacao">
+                    <div class="star-icon">&#9734;</div>
+                    <div class="star-icon">&#9734;</div>
+                    <div class="star-icon">&#9734;</div>
+                    <div class="star-icon">&#9734;</div>
+                    <div class="star-icon">&#9734;</div>
+                </div>
+            </div>
+            <div class="nota" style="width: calc(23px*<?php echo $nota ?>)">
+                <div class="avaliacao">
+                    <div class="star-icon">&#9733;</div>
+                    <div class="star-icon">&#9733;</div>
+                    <div class="star-icon">&#9733;</div>
+                    <div class="star-icon">&#9733;</div>
+                    <div class="star-icon">&#9733;</div>
+                </div>
+            </div>
+        </a>
       <?php
       echo "</div>";
       $i++;
@@ -79,6 +90,7 @@ $_SESSION['current'] = $urlCompleta;
       echo "</div>";
     }
     ?>
+    <footer></footer>
   </section>
 </body>
 

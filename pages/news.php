@@ -10,7 +10,7 @@ $_SESSION['current'] = $urlCompleta;
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head> 
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -43,7 +43,7 @@ $_SESSION['current'] = $urlCompleta;
         include '../server/connection.php';
         $i = 0;
 
-        $query = "select * from post";
+        $query = "select * from post order by datac desc";
         $data = mysqli_query($connection, $query);
 
         while ($item = mysqli_fetch_array($data)) {
@@ -51,20 +51,24 @@ $_SESSION['current'] = $urlCompleta;
             $title = $item['titulo'];
             $content = $item['texto'];
             $image = $item['imagem'];
+            $date = new DateTime($item['datac']);
+            $date = $date->format('d/m/Y');
 
-            echo "<a href='post.php?id=$id' style='text-decoration: none; color: #fff'><div class='news-element' id='newsElement'>
-                    <img class='detail-cover' id='moviePoster' src='../src/$image' />
-                    <div class='info'>
-                        <div class='news-title' id='ts'>
-                            <label for='title' id='newsTitle'>$title</label>
-                        </div>
-                        <div class='news-preview'>
-                            <p id='newsPreview'>$content</p>
-                        </div>
-                    </div>
-                  </div></a>";
+            echo "<a href='post.php?id=$id' style='text-decoration: none; color: #fff'><div class='news-element' id='newsElement'>";
+            echo "<img class='detail-cover' id='moviePoster' src='../src/posts$image' />";
+            echo "<div class='info'>";
+            echo "<div class='news-title' id='ts'>";
+            echo "<label for='title' id='newsTitle'>$title</label>";
+            echo "</div>";
+            echo "<div class='news-preview'>";
+            echo "<p id='newsPreview'>$content</p>";
+            echo "</div>";
+            echo "<p id='newsPreview'>$date</p>";
+            echo "</div>";
+            echo "</div></a>";
         }
         ?>
+        <footer></footer>
     </section>
 </body>
 

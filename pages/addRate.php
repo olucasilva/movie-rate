@@ -38,39 +38,42 @@ $_SESSION['current'] = $urlCompleta;
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
-  <title>Adicionar Avaliação</title>
+  <title>Adicionar avaliação</title>
 </head>
 
 <body>
   <section>
+    <span onclick="history.back()" class="goback">
+      &#8617;
+    </span>
     <form action="../server/addrate.php" method="post" enctype="multipart/form-data">
       <legend>Novo Comentário</legend>
+      <label for="movie">Filme</label>
       <div class="div-input">
-        <label for="movie">Filme</label>
         <br />
         <?php
         if (isset($titulo)) {
           echo "<input type='hidden' name='movieId' value='$id'>";
           echo "<input type='text' name='movie' value='$titulo' disabled />";
         } else {
-          echo "<input type='text' name='movie' id='buscaInput' required autofocus/>";
+          echo "<input type='text' name='movie' id='buscaInput' autocomplete='off'  required autofocus/>";
           echo "<input type='hidden' id='movieId' name='movieId'>";
         }
         ?>
-        <div id="resultadoBusca" class='result'>
-        </div>
-        <script src="../scripts/search.js"></script>
       </div>
+      <div id="resultadoBusca" class='result'>
+      </div>
+      <script src="../scripts/search.js"></script>
       <br />
+      <label for="rate">Nota (0 - 5)</label>
       <div class="div-input">
-        <label for="rate">Nota (0 - 5)</label>
         <br />
         <!-- adicionar validaçao de tamanho -->
         <input type="number" step="0.01" name="rate" min="0" max="5" required />
       </div>
       <br />
+      <label for="comment">Comentário</label>
       <div class="div-input">
-        <label for="comment">Comentário</label>
         <br />
         <textarea name="comment" placeholder="Deixe um breve comentário!" required></textarea>
       </div>
@@ -80,7 +83,7 @@ $_SESSION['current'] = $urlCompleta;
       <br />
       <div class="div-input">
         <label for="button" class="button">
-          <button type="submit">Enviar</button>
+          <button type="submit">Adicionar Avaliação</button>
         </label>
       </div>
     </form>

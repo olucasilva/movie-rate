@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="../styles/login.css">
 <div class='shadow'>
-    <div class='container'>
+    <div class='login-container'>
         <label class='close' onclick='closeDialog()'>&#10006;</label>
         <form action="../server/login.php" method="post">
             <div>

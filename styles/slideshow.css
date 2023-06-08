@@ -1,0 +1,91 @@
+.carousel {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-container {
+  width: 100%;
+  display: flex;
+  transition: transform 0.3s ease;
+  transition: all 1s ease;
+}
+
+.slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 100%;
+  max-height: 100%;
+}
+
+.slide a{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.slide a img {
+  max-width: 60%;
+  max-height: 50vh;
+}
+
+.caption {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px;
+  background-color: #aaa;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: all .5s ease;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev i,
+.next i {
+  font-size: 2em;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: #ccc;
+  color: black;
+}
+
+.indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  background-color: #333;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.indicator.active {
+  background-color: #aaa;
+}
